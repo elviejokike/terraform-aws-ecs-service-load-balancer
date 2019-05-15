@@ -7,5 +7,5 @@ output "listener_arn" {
 }
 
 output "lb_dns_name" {
-  value = "${var.type == "application" ? aws_lb.application.dns_name : aws_lb.network.dns_name}"
+  value = "${var.type == "application" ? element(concat(aws_lb.application.*.dns_name, list("")), 0) : element(concat(aws_lb.network.*.dns_name, list("")), 0)}"
 }
