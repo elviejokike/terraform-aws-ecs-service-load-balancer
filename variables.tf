@@ -100,7 +100,6 @@ variable "name_suffix" {
 }
 
 variable "enable_cross_zone_load_balancing" {
-  type        = "bool"
   default     = false
   description = "If true, cross-zone load balancing of the load balancer will be enabled"
 }
